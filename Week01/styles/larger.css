@@ -1,0 +1,55 @@
+@media screen and (min-width: 768px) {
+
+    .menu-button {
+        display: none;
+    }
+
+    nav {
+        display: block;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: center;
+    }
+
+    nav li {
+        flex: 1;
+    }
+
+    nav a {
+        text-align: center;
+        border-bottom: none;
+    }
+
+    .home-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 1rem;
+    }
+
+    .course-buttons {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .course-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    main {
+        padding: 1.5rem;
+    }
+
+    header {
+        padding: 1rem 2rem;
+    }
+
+    .site-branding span {
+        font-size: 1.4rem;
+    }
+
+    .logo {
+        width: 65px;
+        height: 65px;
+    }
+}
