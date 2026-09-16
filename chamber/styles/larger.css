@@ -1,0 +1,83 @@
+@media screen and (min-width: 768px) {
+
+    /* HEADER */
+
+    .header-content {
+        flex-wrap: nowrap;
+    }
+
+    .branding img {
+        width: 220px;
+    }
+
+
+    /* NAVIGATION */
+
+    #menu {
+        display: none;
+    }
+
+    #navigation {
+        display: flex;
+        width: auto;
+        margin-top: 0;
+        align-items: center;
+        gap: 0.25rem;
+    }
+
+    #navigation a {
+        padding: 0.75rem 1rem;
+        border-radius: 4px;
+    }
+
+
+    /* DIRECTORY GRID */
+
+    #members.grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    /* LIST VIEW */
+
+    #members.list .member-card {
+        display: grid;
+        grid-template-columns: 1.5fr 2fr 1fr 1fr;
+        align-items: center;
+        gap: 1rem;
+    }
+
+
+    /* FOOTER */
+
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .chamber-info,
+    .social-links,
+    .development-info {
+        flex: 1;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .development-info {
+        text-align: right;
+    }
+}
+
+
+@media screen and (min-width: 1000px) {
+
+    /* THREE-COLUMN DIRECTORY */
+
+    #members.grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
