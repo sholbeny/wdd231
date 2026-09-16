@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Andover Cinema",
+    "category": "Movie Theater",
+    "address": "1836 Bunker Lake Blvd NW, Andover, MN 55304",
+    "phone": "763-767-8401",
+    "website": "https://www.cectheatres.com/",
+    "image": "andover-cinema.webp",
+    "membership": 3
+  },
+  {
+    "name": "Pappy's Café & Tavern",
+    "category": "Café",
+    "address": "13827 Round Lake Blvd NW, Andover, MN 55304",
+    "phone": "763-427-4840",
+    "website": "https://www.pappysmn.com/",
+    "image": "pappys-cafe.webp",
+    "membership": 2
+  },
+  {
+    "name": "Rum River Library",
+    "category": "Library",
+    "address": "201 6th Ave, Anoka, MN 55303",
+    "phone": "763-324-1520",
+    "website": "https://www.anokacountymn.gov/2695/Rum-River-Library",
+    "image": "rum-river-library.webp",
+    "membership": 1
+  },
+  {
+    "name": "Andover YMCA",
+    "category": "Recreation/Fitness Center",
+    "address": "15200 Hanson Blvd NW, Andover, MN 55304",
+    "phone": "763-230-9622",
+    "website": "https://www.ymcanorth.org/locations/andover_ymca_community_center",
+    "image": "andover-ymca.webp",
+    "membership": 3
+  },
+  {
+    "name": "Andover Lanes",
+    "category": "Bowling & Entertainment",
+    "address": "13633 Martin St NW, Andover, MN 55304",
+    "phone": "763-754-8000",
+    "website": "https://letsbowl.com/andover-lanes/",
+    "image": "andover-lanes.webp",
+    "membership": 2
+  },
+  {
+    "name": "Margie's Kitchen",
+    "category": "Restaurant",
+    "address": "13735 Round Lake Blvd NW, Andover, MN 55304",
+    "phone": "763-205-4762",
+    "website": "https://www.margies-kitchen.com/",
+    "image": "margies-kitchen.webp",
+    "membership": 2
+  },
+  {
+    "name": "Walmart Supercenter",
+    "category": "Retail & Grocery",
+    "address": "1851 Bunker Lake Blvd NW, Andover, MN 55304",
+    "phone": "763-354-1559",
+    "website": "https://www.walmart.com/store/1999-andover-mn",
+    "image": "walmart-supercenter.webp",
+    "membership": 3
+  }
+]
