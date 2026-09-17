@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Andover Chamber of Commerce | Home</title>
+
+    <meta
+        name="description"
+        content="Welcome to the Andover Chamber of Commerce. Discover local businesses, community events, weather, and opportunities to connect in Andover, Minnesota."
+    >
+    <meta name="author" content="Sammi Holbeny">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico">
+
+    <!-- Facebook Open Graph Meta Tags -->
+    <meta
+        property="og:title"
+        content="Andover Chamber of Commerce"
+    >
+    <meta
+        property="og:description"
+        content="Supporting businesses and strengthening the Andover, Minnesota community."
+    >
+    <meta
+        property="og:image"
+        content="https://sholbeny.github.io/wdd231/chamber/images/andover-chamber-logo.webp"
+    >
+    <meta
+        property="og:url"
+        content="https://sholbeny.github.io/wdd231/chamber/"
+    >
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <!-- JavaScript -->
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/weather.js" defer></script>
+    <script src="scripts/spotlight.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-content">
+
+            <a href="index.html" class="branding">
+                <img
+                    src="images/andover-chamber-logo.webp"
+                    alt="Andover Chamber of Commerce"
+                    width="300"
+                    height="150"
+                >
+            </a>
+
+            <button
+                id="menu"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+
+            <nav id="navigation" aria-label="Main navigation">
+                <a
+                    href="index.html"
+                    class="active"
+                    aria-current="page"
+                >
+                    Home
+                </a>
+                <a href="discover.html">Discover</a>
+                <a href="directory.html">Directory</a>
+                <a href="join.html">Join</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main class="home-main">
+
+        <h1>Andover Chamber of Commerce</h1>
+
+        <!-- Hero -->
+        <section class="hero">
+            <img
+                src="images/andover-hero.webp"
+                alt="Andover Minnesota community"
+                width="1200"
+                height="500"
+            >
+
+            <a href="join.html" class="join-button">
+                Join the Chamber
+            </a>
+        </section>
+
+        <!-- Events and Weather -->
+        <div class="home-info">
+
+            <section class="events">
+                <h2>Current Events</h2>
+
+                <article>
+                    <h3>Andover Community Business Meetup</h3>
+                    <p>
+                        Connect with local business owners and community
+                        members while learning about opportunities in Andover.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>Shop Local Weekend</h3>
+                    <p>
+                        Support businesses throughout the Andover community
+                        and discover something new close to home.
+                    </p>
+                </article>
+            </section>
+
+            <section class="weather">
+                <h2>Andover Weather</h2>
+
+                <div id="current-weather">
+                    <p>
+                        Current Temperature:
+                        <span id="current-temp">--</span>
+                    </p>
+
+                    <p id="weather-description">
+                        Loading weather...
+                    </p>
+                </div>
+
+                <h3>3-Day Forecast</h3>
+
+                <div id="forecast"></div>
+            </section>
+
+        </div>
+
+        <!-- Member Spotlights -->
+        <section class="spotlights">
+            <h2>Member Spotlights</h2>
+
+            <div id="spotlight-cards"></div>
+        </section>
+
+    </main>
+
+    <footer>
+
+        <div class="footer-content">
+
+            <div class="chamber-info">
+                <p>
+                    <strong>Andover Chamber of Commerce</strong>
+                </p>
+
+                <p>Andover, Minnesota 55304</p>
+
+                <p>info@andoverchamber.example</p>
+            </div>
+
+            <div class="social-links">
+
+                <a
+                    href="https://www.youtube.com/"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="YouTube"
+                >
+                    YouTube
+                </a>
+
+                <a
+                    href="https://www.facebook.com/"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Facebook"
+                >
+                    Facebook
+                </a>
+
+                <a
+                    href="https://www.linkedin.com/"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="LinkedIn"
+                >
+                    LinkedIn
+                </a>
+
+            </div>
+
+            <div class="development-info">
+
+                <p>WDD 231 Class Project</p>
+
+                <p>Sammi Holbeny</p>
+
+                <p>
+                    &copy;
+                    <span id="currentyear"></span>
+                    Andover Chamber of Commerce
+                </p>
+
+                <p id="lastModified"></p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
