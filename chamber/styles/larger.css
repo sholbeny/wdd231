@@ -31,6 +31,28 @@
     }
 
 
+    /* HOME PAGE */
+
+    .home-info {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    #forecast {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    #spotlight-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .join-button {
+        right: 2rem;
+        bottom: 2rem;
+        padding: 1rem 1.5rem;
+        font-size: 1.1rem;
+    }
+
+
     /* DIRECTORY GRID */
 
     #members.grid {
@@ -70,7 +92,6 @@
         text-align: right;
     }
 }
-
 
 @media screen and (min-width: 1000px) {
 
