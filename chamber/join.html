@@ -1,81 +1,319 @@
-<form method="get" action="thankyou.html">
+<!DOCTYPE html>
+<html lang="en">
 
-    <label>
-        First Name
-        <input type="text"
-               name="first"
-               title="Applicant's First Name"
-               autocomplete="given-name"
-               required>
-    </label>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <label>
-        Last Name
-        <input type="text"
-               name="last"
-               title="Applicant's Last Name"
-               autocomplete="family-name"
-               required>
-    </label>
+    <title>Join | Andover Chamber of Commerce</title>
 
-    <label>
-        Organizational Title
-        <input type="text"
-               name="organization-title"
-               title="Your title within the organization"
-               autocomplete="organization-title"
-               pattern="[A-Za-z\- ]{7,}">
-    </label>
+    <meta
+        name="description"
+        content="Apply to join the Andover Chamber of Commerce and explore available membership levels."
+    >
+    <meta name="author" content="Sammi Holbeny">
 
-    <label>
-        Email
-        <input type="email"
-               name="email"
-               title="Applicant's Email Address"
-               autocomplete="email"
-               placeholder="example@email.com"
-               required>
-    </label>
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico">
 
-    <label>
-        Mobile Phone
-        <input type="tel"
-               name="phone"
-               title="Applicant's Mobile Phone Number"
-               autocomplete="tel"
-               required>
-    </label>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <label>
-        Business/Organization Name
-        <input type="text"
-               name="organization"
-               title="Business or Organization Name"
-               autocomplete="organization"
-               required>
-    </label>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
 
-    <label>
-        Membership Level
-        <select name="membership" title="Select a Membership Level" required>
-            <option value="">Select a Membership Level</option>
-            <option value="np">NP Membership</option>
-            <option value="bronze">Bronze Membership</option>
-            <option value="silver">Silver Membership</option>
-            <option value="gold">Gold Membership</option>
-        </select>
-    </label>
+    <!-- JavaScript -->
+    <script src="scripts/join.js" defer></script>
+</head>
 
-    <label>
-        Business/Organization Description
-        <textarea
-            name="description"
-            title="Business or Organization Description"
-            rows="5"></textarea>
-    </label>
+<body>
 
-    <input type="hidden" name="timestamp" id="timestamp">
+    <header>
+        <div class="header-content">
+            <img
+                src="images/andover-chamber-logo.webp"
+                alt="Andover Chamber of Commerce logo"
+                width="100"
+                height="100"
+            >
 
-    <button type="submit">Apply for Membership</button>
+            <div>
+                <span>Andover</span>
+                <p>Chamber of Commerce</p>
+            </div>
 
-</form>
+            <button id="menu" aria-label="Open navigation menu"></button>
+        </div>
+    </header>
+
+    <nav id="navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="directory.html">Directory</a></li>
+            <li><a href="join.html" class="active">Join</a></li>
+            <li><a href="#">Discover</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Join the Andover Chamber of Commerce</h1>
+
+        <div class="join-container">
+
+            <!-- Membership Application Form -->
+            <section class="application-section">
+                <h2>Membership Application</h2>
+
+                <form method="get" action="thankyou.html">
+
+                    <label>
+                        First Name
+                        <input
+                            type="text"
+                            name="first"
+                            title="Applicant's First Name"
+                            autocomplete="given-name"
+                            required
+                        >
+                    </label>
+
+                    <label>
+                        Last Name
+                        <input
+                            type="text"
+                            name="last"
+                            title="Applicant's Last Name"
+                            autocomplete="family-name"
+                            required
+                        >
+                    </label>
+
+                    <label>
+                        Organizational Title
+                        <input
+                            type="text"
+                            name="organization-title"
+                            title="Your organizational title"
+                            autocomplete="organization-title"
+                            pattern="[A-Za-z\- ]{7,}"
+                        >
+                    </label>
+
+                    <label>
+                        Email Address
+                        <input
+                            type="email"
+                            name="email"
+                            title="Applicant's Email Address"
+                            autocomplete="email"
+                            placeholder="example@email.com"
+                            required
+                        >
+                    </label>
+
+                    <label>
+                        Mobile Phone Number
+                        <input
+                            type="tel"
+                            name="phone"
+                            title="Applicant's Mobile Phone Number"
+                            autocomplete="tel"
+                            required
+                        >
+                    </label>
+
+                    <label>
+                        Business/Organization Name
+                        <input
+                            type="text"
+                            name="organization"
+                            title="Business or Organization Name"
+                            autocomplete="organization"
+                            required
+                        >
+                    </label>
+
+                    <label>
+                        Membership Level
+                        <select
+                            name="membership"
+                            title="Select a Membership Level"
+                            required
+                        >
+                            <option value="">Select a Membership Level</option>
+                            <option value="np">NP Membership</option>
+                            <option value="bronze">Bronze Membership</option>
+                            <option value="silver">Silver Membership</option>
+                            <option value="gold">Gold Membership</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        Business/Organization Description
+                        <textarea
+                            name="description"
+                            title="Business or Organization Description"
+                            rows="5"
+                        ></textarea>
+                    </label>
+
+                    <!-- Timestamp -->
+                    <input
+                        type="hidden"
+                        name="timestamp"
+                        id="timestamp"
+                    >
+
+                    <input
+                        type="submit"
+                        value="Apply for Membership"
+                    >
+
+                </form>
+            </section>
+
+            <!-- Membership Cards -->
+            <section class="membership-section">
+                <h2>Membership Levels</h2>
+
+                <div class="membership-card">
+                    <h3>NP Membership</h3>
+                    <p>For nonprofit organizations.</p>
+                    <button type="button" id="open-np">
+                        Learn More
+                    </button>
+                </div>
+
+                <div class="membership-card">
+                    <h3>Bronze Membership</h3>
+                    <p>Build connections in the Andover community.</p>
+                    <button type="button" id="open-bronze">
+                        Learn More
+                    </button>
+                </div>
+
+                <div class="membership-card">
+                    <h3>Silver Membership</h3>
+                    <p>Grow your organization's visibility.</p>
+                    <button type="button" id="open-silver">
+                        Learn More
+                    </button>
+                </div>
+
+                <div class="membership-card">
+                    <h3>Gold Membership</h3>
+                    <p>Receive our highest level of member benefits.</p>
+                    <button type="button" id="open-gold">
+                        Learn More
+                    </button>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- NP Membership Modal -->
+        <dialog id="np-dialog">
+            <h2>NP Membership</h2>
+            <p>There is no membership fee for nonprofit organizations.</p>
+
+            <h3>Benefits</h3>
+            <ul>
+                <li>Chamber networking opportunities</li>
+                <li>Access to chamber events</li>
+                <li>Organization directory listing</li>
+                <li>Community involvement opportunities</li>
+            </ul>
+
+            <button type="button" class="close-dialog">
+                Close
+            </button>
+        </dialog>
+
+        <!-- Bronze Membership Modal -->
+        <dialog id="bronze-dialog">
+            <h2>Bronze Membership</h2>
+            <p>
+                A great starting membership for local businesses
+                and organizations.
+            </p>
+
+            <h3>Benefits</h3>
+            <ul>
+                <li>Chamber networking opportunities</li>
+                <li>Access to training events</li>
+                <li>Business directory listing</li>
+                <li>Community event opportunities</li>
+            </ul>
+
+            <button type="button" class="close-dialog">
+                Close
+            </button>
+        </dialog>
+
+        <!-- Silver Membership Modal -->
+        <dialog id="silver-dialog">
+            <h2>Silver Membership</h2>
+            <p>
+                Designed for businesses looking for additional
+                exposure in the community.
+            </p>
+
+            <h3>Benefits</h3>
+            <ul>
+                <li>All Bronze Membership benefits</li>
+                <li>Discounts on chamber events</li>
+                <li>Enhanced business directory listing</li>
+                <li>Additional advertising opportunities</li>
+            </ul>
+
+            <button type="button" class="close-dialog">
+                Close
+            </button>
+        </dialog>
+
+        <!-- Gold Membership Modal -->
+        <dialog id="gold-dialog">
+            <h2>Gold Membership</h2>
+            <p>
+                Our highest membership level for businesses wanting
+                maximum chamber exposure.
+            </p>
+
+            <h3>Benefits</h3>
+            <ul>
+                <li>All Silver Membership benefits</li>
+                <li>Homepage spotlight opportunities</li>
+                <li>Premium advertising opportunities</li>
+                <li>Special event benefits</li>
+                <li>Priority chamber promotion</li>
+            </ul>
+
+            <button type="button" class="close-dialog">
+                Close
+            </button>
+        </dialog>
+
+    </main>
+
+    <footer>
+        <div class="footer-contact">
+            <strong>Andover Chamber of Commerce</strong>
+            <p>Andover, Minnesota</p>
+        </div>
+
+        <div class="footer-info">
+            <p>
+                &copy; <span id="currentyear"></span>
+                Andover Chamber of Commerce
+            </p>
+            <p>Sammi Holbeny | WDD 231</p>
+            <p id="lastModified"></p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
