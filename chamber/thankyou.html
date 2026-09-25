@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Thank You | Andover Chamber of Commerce</title>
+
+    <meta
+        name="description"
+        content="Thank you for applying to join the Andover Chamber of Commerce."
+    >
+    <meta name="author" content="Sammi Holbeny">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <!-- JavaScript -->
+    <script src="scripts/thankyou.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-content">
+            <img
+                src="images/andover-chamber-logo.webp"
+                alt="Andover Chamber of Commerce logo"
+                width="100"
+                height="100"
+            >
+
+            <div>
+                <span>Andover</span>
+                <p>Chamber of Commerce</p>
+            </div>
+
+            <button id="menu" aria-label="Open navigation menu"></button>
+        </div>
+    </header>
+
+    <nav id="navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="directory.html">Directory</a></li>
+            <li><a href="join.html">Join</a></li>
+            <li><a href="#">Discover</a></li>
+        </ul>
+    </nav>
+
+    <main class="thankyou-main">
+
+        <section class="thankyou-card">
+
+            <h1>Thank You!</h1>
+
+            <p>
+                Thank you for applying to join the Andover Chamber
+                of Commerce. We appreciate your interest in becoming
+                part of our local business community.
+            </p>
+
+            <h2>Your Application Information</h2>
+
+            <!-- JavaScript will place the submitted information here -->
+            <div id="application-info"></div>
+
+            <p>
+                We look forward to connecting with you!
+            </p>
+
+            <a href="index.html" class="home-button">
+                Return to Home
+            </a>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-contact">
+            <strong>Andover Chamber of Commerce</strong>
+            <p>Andover, Minnesota</p>
+        </div>
+
+        <div class="footer-info">
+            <p>
+                &copy; <span id="currentyear"></span>
+                Andover Chamber of Commerce
+            </p>
+            <p>Sammi Holbeny | WDD 231</p>
+            <p id="lastModified"></p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
