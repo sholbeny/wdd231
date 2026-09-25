@@ -1,49 +1,44 @@
-// Get the form information from the URL
-const params = new URLSearchParams(window.location.search);
+const formData = new URLSearchParams(window.location.search);
 
-const firstName = params.get("first");
-const lastName = params.get("last");
-const email = params.get("email");
-const phone = params.get("phone");
-const organization = params.get("organization");
-const timestamp = params.get("timestamp");
+const firstName = formData.get("first");
+const lastName = formData.get("last");
+const email = formData.get("email");
+const phone = formData.get("phone");
+const organization = formData.get("organization");
+const timestamp = formData.get("timestamp");
 
+let applicationDate = "Not available";
 
-// Display the submitted information
+if (timestamp) {
+    const date = new Date(timestamp);
+
+    applicationDate = date.toLocaleString("en-US", {
+        dateStyle: "long",
+        timeStyle: "short"
+    });
+}
+
 const applicationInfo = document.querySelector("#application-info");
 
-if (applicationInfo) {
-    applicationInfo.innerHTML = `
-        <p><strong>First Name:</strong> ${firstName}</p>
-        <p><strong>Last Name:</strong> ${lastName}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Mobile Phone:</strong> ${phone}</p>
-        <p><strong>Business/Organization:</strong> ${organization}</p>
-        <p><strong>Application Date:</strong> ${timestamp}</p>
-    `;
-}
+applicationInfo.innerHTML = `
+    <p><strong>First Name:</strong> ${firstName}</p>
+    <p><strong>Last Name:</strong> ${lastName}</p>
+    <p><strong>Email:</strong> ${email}</p>
+    <p><strong>Mobile Phone:</strong> ${phone}</p>
+    <p><strong>Business/Organization:</strong> ${organization}</p>
+    <p><strong>Application Date:</strong> ${applicationDate}</p>
+`;
 
-
-// Footer information
 const currentYear = document.querySelector("#currentyear");
+currentYear.textContent = new Date().getFullYear();
+
 const lastModified = document.querySelector("#lastModified");
+lastModified.textContent = `Last Modified: ${document.lastModified}`;
 
-if (currentYear) {
-    currentYear.textContent = new Date().getFullYear();
-}
-
-if (lastModified) {
-    lastModified.textContent = `Last Modified: ${document.lastModified}`;
-}
-
-
-// Hamburger menu
 const menuButton = document.querySelector("#menu");
 const navigation = document.querySelector("#navigation");
 
-if (menuButton && navigation) {
-    menuButton.addEventListener("click", () => {
-        navigation.classList.toggle("open");
-        menuButton.classList.toggle("open");
-    });
-}
+menuButton.addEventListener("click", () => {
+    navigation.classList.toggle("open");
+    menuButton.classList.toggle("open");
+});
