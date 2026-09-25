@@ -102,3 +102,41 @@
     }
 
 }
+/* =========================
+   JOIN PAGE - LARGE SCREEN
+   ========================= */
+
+@media screen and (min-width: 768px) {
+
+    .join-container {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 2rem;
+        align-items: start;
+    }
+
+    .application-section {
+        margin-bottom: 3rem;
+    }
+
+    .membership-section {
+        margin-bottom: 3rem;
+    }
+
+    .application-section form {
+        padding: 2rem;
+    }
+
+    .membership-card {
+        margin-top: 0;
+        margin-bottom: 1.25rem;
+    }
+
+
+    /* Thank You Page */
+
+    .thankyou-card {
+        padding: 2.5rem;
+    }
+
+}
