@@ -1,0 +1,81 @@
+<form method="get" action="thankyou.html">
+
+    <label>
+        First Name
+        <input type="text"
+               name="first"
+               title="Applicant's First Name"
+               autocomplete="given-name"
+               required>
+    </label>
+
+    <label>
+        Last Name
+        <input type="text"
+               name="last"
+               title="Applicant's Last Name"
+               autocomplete="family-name"
+               required>
+    </label>
+
+    <label>
+        Organizational Title
+        <input type="text"
+               name="organization-title"
+               title="Your title within the organization"
+               autocomplete="organization-title"
+               pattern="[A-Za-z\- ]{7,}">
+    </label>
+
+    <label>
+        Email
+        <input type="email"
+               name="email"
+               title="Applicant's Email Address"
+               autocomplete="email"
+               placeholder="example@email.com"
+               required>
+    </label>
+
+    <label>
+        Mobile Phone
+        <input type="tel"
+               name="phone"
+               title="Applicant's Mobile Phone Number"
+               autocomplete="tel"
+               required>
+    </label>
+
+    <label>
+        Business/Organization Name
+        <input type="text"
+               name="organization"
+               title="Business or Organization Name"
+               autocomplete="organization"
+               required>
+    </label>
+
+    <label>
+        Membership Level
+        <select name="membership" title="Select a Membership Level" required>
+            <option value="">Select a Membership Level</option>
+            <option value="np">NP Membership</option>
+            <option value="bronze">Bronze Membership</option>
+            <option value="silver">Silver Membership</option>
+            <option value="gold">Gold Membership</option>
+        </select>
+    </label>
+
+    <label>
+        Business/Organization Description
+        <textarea
+            name="description"
+            title="Business or Organization Description"
+            rows="5"></textarea>
+    </label>
+
+    <input type="hidden" name="timestamp" id="timestamp">
+
+    <button type="submit">Apply for Membership</button>
+
+</form>
