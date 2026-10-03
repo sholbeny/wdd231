@@ -727,13 +727,7 @@ dialog .close-dialog:hover {
 }
 /* =========================
    DISCOVER PAGE
-========================= */
-
-.discover-main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem;
-}
+   ========================= */
 
 .discover-intro {
     margin-bottom: 1rem;
@@ -748,11 +742,8 @@ dialog .close-dialog:hover {
     font-weight: 500;
 }
 
-/* Small Screen Layout */
-
 .discover-grid {
     display: grid;
-    grid-template-columns: 1fr;
     grid-template-areas:
         "card1"
         "card2"
@@ -776,7 +767,7 @@ dialog .close-dialog:hover {
 
 .discover-card {
     background-color: #ffffff;
-    border: 1px solid #ddd;
+    border: 1px solid #d1d5db;
     border-radius: 8px;
     padding: 1rem;
 }
@@ -794,7 +785,6 @@ dialog .close-dialog:hover {
 .discover-card img {
     display: block;
     width: 100%;
-    height: auto;
     border-radius: 6px;
 }
 
@@ -802,10 +792,6 @@ dialog .close-dialog:hover {
     font-style: normal;
     font-weight: 500;
     margin-bottom: 1rem;
-}
-
-.discover-card p {
-    line-height: 1.5;
 }
 
 .discover-card button {

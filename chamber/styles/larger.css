@@ -53,20 +53,48 @@
     }
 
 
-    /* DIRECTORY GRID */
+    /* DIRECTORY */
 
     #members.grid {
         grid-template-columns: repeat(2, 1fr);
     }
-
-
-    /* LIST VIEW */
 
     #members.list .member-card {
         display: grid;
         grid-template-columns: 1.5fr 2fr 1fr 1fr;
         align-items: center;
         gap: 1rem;
+    }
+
+
+    /* JOIN PAGE */
+
+    .join-container {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 2rem;
+        align-items: start;
+    }
+
+    .application-section,
+    .membership-section {
+        margin-bottom: 3rem;
+    }
+
+    .application-section form {
+        padding: 2rem;
+    }
+
+    .membership-card {
+        margin-top: 0;
+        margin-bottom: 1.25rem;
+    }
+
+
+    /* THANK YOU PAGE */
+
+    .thankyou-card {
+        padding: 2.5rem;
     }
 
 
@@ -93,62 +121,23 @@
     }
 }
 
-@media screen and (min-width: 1000px) {
 
-    /* THREE-COLUMN DIRECTORY */
+/* DIRECTORY - LARGE */
+
+@media screen and (min-width: 1000px) {
 
     #members.grid {
         grid-template-columns: repeat(3, 1fr);
     }
-
 }
-/* =========================
-   JOIN PAGE - LARGE SCREEN
-   ========================= */
-
-@media screen and (min-width: 768px) {
-
-    .join-container {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        gap: 2rem;
-        align-items: start;
-    }
-
-    .application-section {
-        margin-bottom: 3rem;
-    }
-
-    .membership-section {
-        margin-bottom: 3rem;
-    }
-
-    .application-section form {
-        padding: 2rem;
-    }
-
-    .membership-card {
-        margin-top: 0;
-        margin-bottom: 1.25rem;
-    }
 
 
-    /* Thank You Page */
-
-    .thankyou-card {
-        padding: 2.5rem;
-    }
-
-}
-/* =========================
-   DISCOVER - MEDIUM
-========================= */
+/* DISCOVER - MEDIUM */
 
 @media screen and (min-width: 641px) and (max-width: 1024px) {
 
     .discover-grid {
-        grid-template-columns: 1fr 1fr;
-
+        grid-template-columns: repeat(2, 1fr);
         grid-template-areas:
             "card1 card2"
             "card3 card3"
@@ -167,15 +156,12 @@
 }
 
 
-/* =========================
-   DISCOVER - LARGE
-========================= */
+/* DISCOVER - LARGE */
 
 @media screen and (min-width: 1025px) {
 
     .discover-grid {
         grid-template-columns: repeat(3, 1fr);
-
         grid-template-areas:
             "card1 card1 card2"
             "card3 card4 card2"
