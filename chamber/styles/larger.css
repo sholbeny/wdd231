@@ -1,6 +1,8 @@
-@media screen and (min-width: 768px) {
+/* =========================
+   TABLET / DESKTOP
+   ========================= */
 
-    /* HEADER */
+@media screen and (min-width: 768px) {
 
     .header-content {
         flex-wrap: nowrap;
@@ -9,9 +11,6 @@
     .branding img {
         width: 220px;
     }
-
-
-    /* NAVIGATION */
 
     #menu {
         display: none;
@@ -31,16 +30,13 @@
     }
 
 
-    /* HOME PAGE */
+    /* Home */
 
     .home-info {
         grid-template-columns: 2fr 1fr;
     }
 
-    #forecast {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
+    #forecast,
     #spotlight-cards {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -53,7 +49,7 @@
     }
 
 
-    /* DIRECTORY */
+    /* Directory */
 
     #members.grid {
         grid-template-columns: repeat(2, 1fr);
@@ -67,7 +63,7 @@
     }
 
 
-    /* JOIN PAGE */
+    /* Join */
 
     .join-container {
         display: grid;
@@ -86,19 +82,15 @@
     }
 
     .membership-card {
-        margin-top: 0;
-        margin-bottom: 1.25rem;
+        margin: 0 0 1.25rem;
     }
-
-
-    /* THANK YOU PAGE */
 
     .thankyou-card {
         padding: 2.5rem;
     }
 
 
-    /* FOOTER */
+    /* Footer */
 
     .footer-content {
         flex-direction: row;
@@ -122,7 +114,9 @@
 }
 
 
-/* DIRECTORY - LARGE */
+/* =========================
+   DIRECTORY - LARGE
+   ========================= */
 
 @media screen and (min-width: 1000px) {
 
@@ -132,7 +126,10 @@
 }
 
 
-/* DISCOVER - MEDIUM */
+/* =========================
+   DISCOVER - MEDIUM
+   641px - 1024px
+   ========================= */
 
 @media screen and (min-width: 641px) and (max-width: 1024px) {
 
@@ -156,7 +153,10 @@
 }
 
 
-/* DISCOVER - LARGE */
+/* =========================
+   DISCOVER - LARGE
+   1025px+
+   ========================= */
 
 @media screen and (min-width: 1025px) {
 

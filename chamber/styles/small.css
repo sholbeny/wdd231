@@ -1,5 +1,5 @@
 /* =========================
-   GENERAL STYLES
+   GENERAL
    ========================= */
 
 body {
@@ -14,13 +14,34 @@ img {
     height: auto;
 }
 
-a {
+a,
+h1,
+.member-card h2,
+.events h2,
+.weather h2,
+.spotlights h2,
+.spotlight-card h3,
+#current-temp,
+.discover-card h2 {
     color: #14532d;
+}
+
+main,
+.home-main {
+    width: calc(100% - 2rem);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+h1 {
+    margin: 0 1rem 2rem;
+    text-align: center;
 }
 
 
 /* =========================
-   HEADER
+   HEADER / NAVIGATION
    ========================= */
 
 header {
@@ -32,7 +53,6 @@ header {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0.75rem 1rem;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -45,18 +65,12 @@ header {
 
 .branding img {
     width: 180px;
-    height: auto;
 }
-
-
-/* =========================
-   MOBILE MENU
-   ========================= */
 
 #menu {
     background-color: #14532d;
     color: #ffffff;
-    border: none;
+    border: 0;
     border-radius: 5px;
     padding: 0.6rem 0.8rem;
     font-size: 1.5rem;
@@ -94,25 +108,35 @@ header {
 
 
 /* =========================
-   MAIN CONTENT
+   SHARED CARDS
    ========================= */
 
-main {
-    width: calc(100% - 2rem);
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 0;
+.member-card,
+.events,
+.weather,
+.spotlight-card,
+.discover-card {
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 1rem;
 }
 
-h1 {
-    margin-top: 0;
+.member-card,
+.events,
+.weather,
+.spotlight-card {
+    box-shadow: 0 2px 5px rgb(0 0 0 / 10%);
+}
+
+.member-card,
+.spotlight-card {
     text-align: center;
-    color: #14532d;
 }
 
 
 /* =========================
-   GRID / LIST BUTTONS
+   DIRECTORY
    ========================= */
 
 .view-buttons {
@@ -122,14 +146,20 @@ h1 {
     margin: 1.5rem 0 2rem;
 }
 
-.view-buttons button {
+.view-buttons button,
+.discover-card button {
     background-color: #14532d;
     color: #ffffff;
-    border: 2px solid #14532d;
+    border: 0;
     border-radius: 5px;
+    padding: 0.7rem 1rem;
+    cursor: pointer;
+}
+
+.view-buttons button {
+    border: 2px solid #14532d;
     padding: 0.7rem 1.5rem;
     font-weight: 600;
-    cursor: pointer;
 }
 
 .view-buttons button:hover {
@@ -137,24 +167,13 @@ h1 {
     color: #14532d;
 }
 
-
-/* =========================
-   MEMBER GRID
-   ========================= */
-
-#members.grid {
+#members.grid,
+.home-info,
+#forecast,
+#spotlight-cards {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
-}
-
-.member-card {
-    background-color: #ffffff;
-    border: 1px solid #d1d5db;
-    border-radius: 8px;
-    padding: 1rem;
-    text-align: center;
-    box-shadow: 0 2px 5px rgb(0 0 0 / 10%);
 }
 
 .member-card img {
@@ -166,35 +185,26 @@ h1 {
     border-radius: 5px;
 }
 
-.member-card h2 {
-    margin: 0.5rem 0;
-    color: #14532d;
-}
-
+.member-card h2,
 .member-card p {
     margin: 0.5rem 0;
 }
 
-.member-card a {
+.member-card a,
+.spotlight-card a {
     font-weight: 600;
 }
-
-
-/* =========================
-   LIST VIEW
-   ========================= */
 
 #members.list {
     display: flex;
     flex-direction: column;
-    gap: 0;
 }
 
 #members.list .member-card {
+    border: 0;
+    border-bottom: 1px solid #d1d5db;
     border-radius: 0;
     box-shadow: none;
-    border: none;
-    border-bottom: 1px solid #d1d5db;
     text-align: left;
 }
 
@@ -202,75 +212,13 @@ h1 {
     background-color: #eaf5ec;
 }
 
-/* The rubric requires list view WITHOUT images */
 #members.list img {
     display: none;
 }
 
 
 /* =========================
-   FOOTER
-   ========================= */
-
-footer {
-    background-color: #14532d;
-    color: #ffffff;
-    margin-top: 2rem;
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
-
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.footer-content p {
-    margin: 0.3rem 0;
-}
-
-.social-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-.social-links a {
-    color: #ffffff;
-    font-weight: 600;
-}
-
-.social-links a:hover {
-    text-decoration: none;
-}
-
-
-/* =========================
-   ACCESSIBILITY
-   ========================= */
-
-a:focus-visible,
-button:focus-visible {
-    outline: 3px solid #facc15;
-    outline-offset: 3px;
-}
-/* =========================
-   CHAMBER HOME PAGE
-   ========================= */
-
-.home-main {
-    width: calc(100% - 2rem);
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 0;
-}
-
-
-/* =========================
-   HERO
+   HOME PAGE
    ========================= */
 
 .hero {
@@ -281,7 +229,6 @@ button:focus-visible {
 .hero img {
     display: block;
     width: 100%;
-    height: auto;
     border-radius: 8px;
 }
 
@@ -289,7 +236,6 @@ button:focus-visible {
     position: absolute;
     right: 1rem;
     bottom: 1rem;
-    display: inline-block;
     padding: 0.8rem 1.2rem;
     background-color: #14532d;
     color: #ffffff;
@@ -297,7 +243,6 @@ button:focus-visible {
     border-radius: 5px;
     text-decoration: none;
     font-weight: 700;
-    box-shadow: 0 2px 5px rgb(0 0 0 / 25%);
 }
 
 .join-button:hover {
@@ -306,32 +251,14 @@ button:focus-visible {
     border-color: #14532d;
 }
 
-
-/* =========================
-   EVENTS AND WEATHER
-   ========================= */
-
 .home-info {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
     margin-bottom: 2rem;
-}
-
-.events,
-.weather {
-    background-color: #ffffff;
-    border: 1px solid #d1d5db;
-    border-radius: 8px;
-    padding: 1rem;
-    box-shadow: 0 2px 5px rgb(0 0 0 / 10%);
 }
 
 .events h2,
 .weather h2,
 .spotlights h2 {
     margin-top: 0;
-    color: #14532d;
 }
 
 .events article {
@@ -340,7 +267,7 @@ button:focus-visible {
 }
 
 .events article:last-child {
-    border-bottom: none;
+    border-bottom: 0;
 }
 
 .events h3 {
@@ -351,11 +278,6 @@ button:focus-visible {
     margin-top: 0;
 }
 
-
-/* =========================
-   WEATHER
-   ========================= */
-
 #current-weather {
     margin-bottom: 1rem;
 }
@@ -363,7 +285,6 @@ button:focus-visible {
 #current-temp {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #14532d;
 }
 
 #weather-description {
@@ -371,8 +292,6 @@ button:focus-visible {
 }
 
 #forecast {
-    display: grid;
-    grid-template-columns: 1fr;
     gap: 0.75rem;
 }
 
@@ -387,32 +306,12 @@ button:focus-visible {
     margin: 0.25rem 0;
 }
 
-
-/* =========================
-   MEMBER SPOTLIGHTS
-   ========================= */
-
 .spotlights {
     margin-top: 2rem;
 }
 
 .spotlights > h2 {
     text-align: center;
-}
-
-#spotlight-cards {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-}
-
-.spotlight-card {
-    background-color: #ffffff;
-    border: 1px solid #d1d5db;
-    border-radius: 8px;
-    padding: 1rem;
-    text-align: center;
-    box-shadow: 0 2px 5px rgb(0 0 0 / 10%);
 }
 
 .spotlight-card img {
@@ -424,7 +323,6 @@ button:focus-visible {
 }
 
 .spotlight-card h3 {
-    color: #14532d;
     margin-bottom: 0.5rem;
 }
 
@@ -433,7 +331,6 @@ button:focus-visible {
 }
 
 .spotlight-card a {
-    font-weight: 600;
     overflow-wrap: anywhere;
 }
 
@@ -446,6 +343,8 @@ button:focus-visible {
     border-radius: 5px;
     font-weight: 600;
 }
+
+
 /* =========================
    JOIN PAGE
    ========================= */
@@ -456,14 +355,8 @@ button:focus-visible {
     margin: 0 auto;
 }
 
-main > h1 {
-    text-align: center;
-    margin: 2rem 1rem;
-}
-
-/* Application Form */
-
-.application-section {
+.application-section,
+.membership-section {
     margin-bottom: 2rem;
 }
 
@@ -473,16 +366,18 @@ main > h1 {
     margin-bottom: 1rem;
 }
 
-.application-section form {
-    padding: 1.5rem;
-    border-radius: 8px;
+.application-section form,
+.membership-card,
+.thankyou-card {
     background-color: #f5f5f5;
+    border-radius: 8px;
+    padding: 1.5rem;
 }
 
 .application-section label {
     display: block;
     margin-bottom: 1.25rem;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .application-section input[type="text"],
@@ -494,7 +389,7 @@ main > h1 {
     width: 100%;
     padding: 0.75rem;
     margin-top: 0.4rem;
-    border: 1px solid #777;
+    border: 1px solid #777777;
     border-radius: 5px;
     box-sizing: border-box;
     font: inherit;
@@ -511,53 +406,50 @@ main > h1 {
     outline-offset: 2px;
 }
 
-/* Required Fields */
-
 .application-section input:required {
     border-left: 5px solid #ab0000;
 }
 
 .application-section input:required:valid {
-    border-left: 5px solid #2f7d32;
+    border-left-color: #2f7d32;
 }
 
-/* Submit Button */
 
-.application-section input[type="submit"] {
-    width: 100%;
-    padding: 0.9rem;
-    border: none;
-    border-radius: 5px;
+/* Join Buttons */
+
+.application-section input[type="submit"],
+.membership-card button,
+dialog .close-dialog,
+.home-button {
     background-color: #1d3557;
-    color: white;
-    font-size: 1rem;
-    font-weight: bold;
+    color: #ffffff;
+    border: 0;
+    border-radius: 5px;
+    padding: 0.75rem 1rem;
+    font-weight: 700;
     cursor: pointer;
 }
 
-.application-section input[type="submit"]:hover {
+.application-section input[type="submit"] {
+    width: 100%;
+    font-size: 1rem;
+}
+
+.application-section input[type="submit"]:hover,
+.membership-card button:hover,
+dialog .close-dialog:hover,
+.home-button:hover {
     background-color: #457b9d;
 }
 
 
-/* =========================
-   MEMBERSHIP CARDS
-   ========================= */
-
-.membership-section {
-    margin-bottom: 2rem;
-}
+/* Membership Cards */
 
 .membership-card {
     margin: 1rem 0;
-    padding: 1.5rem;
     text-align: center;
-    background-color: #f5f5f5;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+    border: 1px solid #cccccc;
     box-shadow: 0 2px 6px rgb(0 0 0 / 15%);
-
-    /* Required initial animation */
     opacity: 0;
     transform: translateY(25px);
     animation: membershipFade 0.7s ease forwards;
@@ -579,6 +471,22 @@ main > h1 {
     animation-delay: 0.7s;
 }
 
+.membership-card h3,
+dialog h2,
+.thankyou-card h1,
+.thankyou-card h2 {
+    color: #1d3557;
+}
+
+.membership-card h3,
+dialog h2 {
+    margin-top: 0;
+}
+
+.membership-card p {
+    margin: 0.75rem 0 1rem;
+}
+
 @keyframes membershipFade {
     from {
         opacity: 0;
@@ -591,50 +499,22 @@ main > h1 {
     }
 }
 
-.membership-card h3 {
-    margin-top: 0;
-    color: #1d3557;
-}
-
-.membership-card p {
-    margin: 0.75rem 0 1rem;
-}
-
-.membership-card button {
-    padding: 0.7rem 1.2rem;
-    border: none;
-    border-radius: 5px;
-    background-color: #1d3557;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.membership-card button:hover {
-    background-color: #457b9d;
-}
-
 
 /* =========================
-   MEMBERSHIP DIALOGS
+   DIALOGS
    ========================= */
 
 dialog {
     width: 85%;
     max-width: 500px;
     padding: 1.5rem;
-    border: none;
+    border: 0;
     border-radius: 10px;
     box-shadow: 0 5px 20px rgb(0 0 0 / 35%);
 }
 
 dialog::backdrop {
     background-color: rgb(0 0 0 / 60%);
-}
-
-dialog h2 {
-    margin-top: 0;
-    color: #1d3557;
 }
 
 dialog h3 {
@@ -649,16 +529,6 @@ dialog ul {
 dialog .close-dialog {
     display: block;
     margin: 1rem 0 0 auto;
-    padding: 0.6rem 1rem;
-    border: none;
-    border-radius: 5px;
-    background-color: #1d3557;
-    color: white;
-    cursor: pointer;
-}
-
-dialog .close-dialog:hover {
-    background-color: #457b9d;
 }
 
 
@@ -673,26 +543,22 @@ dialog .close-dialog:hover {
 }
 
 .thankyou-card {
-    padding: 1.5rem;
-    background-color: #f5f5f5;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgb(0 0 0 / 15%);
 }
 
 .thankyou-card h1 {
     text-align: center;
-    color: #1d3557;
 }
 
 .thankyou-card h2 {
     margin-top: 2rem;
-    color: #1d3557;
 }
 
 #application-info {
     margin: 1rem 0 2rem;
     padding: 1rem;
-    background-color: white;
+    background-color: #ffffff;
     border-left: 5px solid #457b9d;
     border-radius: 5px;
 }
@@ -703,28 +569,10 @@ dialog .close-dialog:hover {
 
 .home-button {
     display: inline-block;
-    padding: 0.75rem 1.25rem;
-    background-color: #1d3557;
-    color: white;
     text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-}
-
-.home-button:hover {
-    background-color: #457b9d;
 }
 
 
-/* Reduce animations for users who prefer less motion */
-
-@media (prefers-reduced-motion: reduce) {
-    .membership-card {
-        opacity: 1;
-        transform: none;
-        animation: none;
-    }
-}
 /* =========================
    DISCOVER PAGE
    ========================= */
@@ -765,18 +613,6 @@ dialog .close-dialog:hover {
 .card7 { grid-area: card7; }
 .card8 { grid-area: card8; }
 
-.discover-card {
-    background-color: #ffffff;
-    border: 1px solid #d1d5db;
-    border-radius: 8px;
-    padding: 1rem;
-}
-
-.discover-card h2 {
-    color: #14532d;
-    margin-top: 0;
-}
-
 .discover-card figure {
     margin: 0 0 1rem;
     overflow: hidden;
@@ -788,17 +624,72 @@ dialog .close-dialog:hover {
     border-radius: 6px;
 }
 
+.discover-card h2 {
+    margin-top: 0;
+}
+
 .discover-card address {
     font-style: normal;
     font-weight: 500;
     margin-bottom: 1rem;
 }
 
-.discover-card button {
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer {
     background-color: #14532d;
     color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    padding: 0.7rem 1rem;
-    cursor: pointer;
+    margin-top: 2rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.footer-content p {
+    margin: 0.3rem 0;
+}
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.social-links a {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.social-links a:hover {
+    text-decoration: none;
+}
+
+
+/* =========================
+   ACCESSIBILITY
+   ========================= */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .membership-card {
+        opacity: 1;
+        transform: none;
+        animation: none;
+    }
 }
