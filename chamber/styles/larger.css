@@ -128,7 +128,6 @@
 
 /* =========================
    DISCOVER - MEDIUM
-   641px - 1024px
    ========================= */
 
 @media screen and (min-width: 641px) and (max-width: 1024px) {
@@ -155,7 +154,6 @@
 
 /* =========================
    DISCOVER - LARGE
-   1025px+
    ========================= */
 
 @media screen and (min-width: 1025px) {
