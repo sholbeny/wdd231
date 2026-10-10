@@ -532,3 +532,64 @@ footer p {
 #dialog-content a:not(.button) {
     color: #f2efe9;
 }
+/* =========================
+   SAVED PAGE
+========================= */
+
+.saved-section {
+    min-height: 400px;
+
+    padding: 1rem 1rem 4rem;
+}
+
+.saved-section > h2 {
+    margin-bottom: 2rem;
+}
+
+.empty-saved {
+    max-width: 600px;
+
+    margin: 2rem auto;
+    padding: 2.5rem 1.5rem;
+
+    background-color: #242427;
+
+    border: 1px solid #444;
+    border-radius: 6px;
+
+    text-align: center;
+}
+
+.empty-saved h3 {
+    margin-top: 0;
+
+    font-size: 1.5rem;
+}
+
+.empty-saved p {
+    margin-bottom: 1.5rem;
+}
+
+
+/* REMOVE BUTTON */
+
+.remove-button {
+    flex: 1;
+
+    padding: 0.75rem;
+
+    background-color: transparent;
+    color: #f2efe9;
+
+    border: 2px solid #7a1f2b;
+    border-radius: 4px;
+
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.remove-button:hover {
+    background-color: #7a1f2b;
+}
