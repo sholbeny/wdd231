@@ -96,6 +96,77 @@
 
         </section>
 
+        <!-- PLAN A HAUNTED TRIP FORM -->
+        
+        <section class="trip-planner">
+    <h2>Plan a Haunted Trip</h2>
+
+    <p>
+        Have a haunted location you'd love to visit?
+        Fill out the form below to create your trip idea.
+    </p>
+
+    <form method="get" action="thanks.html">
+
+        <label for="name">
+            Your Name
+            <input
+                type="text"
+                id="name"
+                name="name"
+                autocomplete="name"
+                required>
+        </label>
+
+        <label for="email">
+            Email
+            <input
+                type="email"
+                id="email"
+                name="email"
+                autocomplete="email"
+                required>
+        </label>
+
+        <label for="location">
+            Haunted Location
+            <input
+                type="text"
+                id="location"
+                name="location"
+                required>
+        </label>
+
+        <label for="season">
+            Preferred Season
+            <select id="season" name="season" required>
+                <option value="" disabled selected>
+                    Choose a season
+                </option>
+                <option value="Spring">Spring</option>
+                <option value="Summer">Summer</option>
+                <option value="Fall">Fall</option>
+                <option value="Winter">Winter</option>
+            </select>
+        </label>
+
+        <label for="reason">
+            Why would you like to visit?
+            <textarea
+                id="reason"
+                name="reason"
+                rows="5"
+                required></textarea>
+        </label>
+
+        <input
+            type="submit"
+            value="Create Trip Idea"
+            class="form-submit">
+
+    </form>
+</section>
+
 
         <!-- DETAILS DIALOG -->
 

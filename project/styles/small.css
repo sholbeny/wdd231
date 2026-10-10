@@ -544,6 +544,38 @@ header {
     margin-bottom: 1.5rem;
 }
 
+/* =========================
+   FORM SUBMISSION PAGE
+========================= */
+
+.submission {
+    max-width: 700px;
+    margin: 1rem auto 4rem;
+    padding: 2rem;
+
+    background-color: #242427;
+
+    border: 1px solid #444;
+    border-radius: 6px;
+
+    text-align: center;
+}
+
+.submission h2 {
+    margin-top: 0;
+}
+
+#form-results {
+    margin: 2rem 0;
+
+    text-align: left;
+}
+
+#form-results p {
+    padding-bottom: 0.75rem;
+
+    border-bottom: 1px solid #444;
+}
 
 /* =========================
    FOOTER
