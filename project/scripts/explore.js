@@ -1,15 +1,42 @@
+import { getLocations } from "./locations.js";
+
 const locationCards = document.querySelector("#location-cards");
 const dialog = document.querySelector("#location-dialog");
 const dialogContent = document.querySelector("#dialog-content");
 const closeDialog = document.querySelector("#close-dialog");
 const filterButtons = document.querySelectorAll(".filter");
 
+let hauntedLocations = [];
+
+
+async function loadLocations() {
+    hauntedLocations = await getLocations();
+
+    if (hauntedLocations.length === 0) {
+        locationCards.innerHTML = `
+            <p class="error-message">
+                Sorry, the haunted locations could not be loaded.
+            </p>
+        `;
+        return;
+    }
+
+    displayLocations(hauntedLocations);
+}
+
+
+function getSavedLocations() {
+    return JSON.parse(localStorage.getItem("savedLocations")) || [];
+}
+
 
 function displayLocations(locations) {
-
     locationCards.innerHTML = "";
 
+    const savedLocations = getSavedLocations();
+
     locations.forEach((location) => {
+        const isSaved = savedLocations.includes(location.id);
 
         const card = document.createElement("article");
         card.classList.add("explore-card");
@@ -43,8 +70,9 @@ function displayLocations(locations) {
 
                     <button
                         class="save-button"
-                        data-id="${location.id}">
-                        ♡ Save
+                        data-id="${location.id}"
+                        aria-pressed="${isSaved}">
+                        ${isSaved ? "♥ Saved" : "♡ Save"}
                     </button>
 
                 </div>
@@ -53,7 +81,6 @@ function displayLocations(locations) {
         `;
 
         locationCards.appendChild(card);
-
     });
 
     addCardEvents();
@@ -61,51 +88,35 @@ function displayLocations(locations) {
 
 
 function addCardEvents() {
-
-    const detailButtons =
-        document.querySelectorAll(".details-button");
-
-    const saveButtons =
-        document.querySelectorAll(".save-button");
-
+    const detailButtons = document.querySelectorAll(".details-button");
+    const saveButtons = document.querySelectorAll(".save-button");
 
     detailButtons.forEach((button) => {
-
         button.addEventListener("click", () => {
-
-            const location =
-                hauntedLocations.find(
-                    (place) => place.id === button.dataset.id
-                );
+            const location = hauntedLocations.find(
+                (place) => place.id === button.dataset.id
+            );
 
             showLocationDetails(location);
-
         });
-
     });
 
-
     saveButtons.forEach((button) => {
-
         button.addEventListener("click", () => {
-
             saveLocation(button.dataset.id);
 
             button.textContent = "♥ Saved";
-
+            button.setAttribute("aria-pressed", "true");
         });
-
     });
-
 }
 
 
 function showLocationDetails(location) {
-
     let contact = "";
 
     if (location.phone) {
-        contact = `
+        contact += `
             <p>
                 <strong>Phone:</strong>
                 ${location.phone}
@@ -114,7 +125,7 @@ function showLocationDetails(location) {
     }
 
     if (location.email) {
-        contact = `
+        contact += `
             <p>
                 <strong>Email:</strong>
                 <a href="mailto:${location.email}">
@@ -124,9 +135,7 @@ function showLocationDetails(location) {
         `;
     }
 
-
     dialogContent.innerHTML = `
-
         <img
             src="${location.image}"
             alt="${location.name}"
@@ -171,74 +180,52 @@ function showLocationDetails(location) {
             class="button">
             Visit Official Website
         </a>
-
     `;
 
     dialog.showModal();
-
 }
 
 
 function saveLocation(id) {
-
-    let savedLocations =
-        JSON.parse(localStorage.getItem("savedLocations")) || [];
-
+    const savedLocations = getSavedLocations();
 
     if (!savedLocations.includes(id)) {
-
         savedLocations.push(id);
 
         localStorage.setItem(
             "savedLocations",
             JSON.stringify(savedLocations)
         );
-
     }
-
 }
 
 
 filterButtons.forEach((button) => {
-
     button.addEventListener("click", () => {
-
-        filterButtons.forEach((btn) =>
-            btn.classList.remove("active-filter")
-        );
+        filterButtons.forEach((btn) => {
+            btn.classList.remove("active-filter");
+        });
 
         button.classList.add("active-filter");
 
-
         const filter = button.dataset.filter;
 
-
         if (filter === "all") {
-
             displayLocations(hauntedLocations);
-
         } else {
-
-            const filteredLocations =
-                hauntedLocations.filter(
-                    (location) =>
-                        location.type === filter
-                );
+            const filteredLocations = hauntedLocations.filter(
+                (location) => location.type === filter
+            );
 
             displayLocations(filteredLocations);
-
         }
-
     });
-
 });
 
 
 closeDialog.addEventListener("click", () => {
-
     dialog.close();
-
 });
 
 
-displayLocations(hauntedLocations);
+loadLocations();
