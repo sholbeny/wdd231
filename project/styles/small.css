@@ -48,14 +48,14 @@ header {
 }
 
 .header-content {
-    max-width: 1200px;
-    margin: auto;
-    padding: 0.75rem 1rem;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+
+    max-width: 1200px;
+    margin: auto;
+    padding: 0.75rem 1rem;
 }
 
 .branding {
@@ -79,22 +79,24 @@ header {
 
 
 /* =========================
-   MOBILE MENU
+   MOBILE NAVIGATION
 ========================= */
 
 #menu {
     background: none;
     border: none;
-    color: #f2efe9;
 
+    color: #f2efe9;
     font-size: 2rem;
+
     cursor: pointer;
 }
 
 #navigation {
     display: none;
-    width: 100%;
     flex-direction: column;
+
+    width: 100%;
     margin-top: 1rem;
 }
 
@@ -106,8 +108,8 @@ header {
     padding: 0.9rem;
 
     color: #f2efe9;
-    text-decoration: none;
     text-align: center;
+    text-decoration: none;
 
     border-top: 1px solid #333;
 }
@@ -124,12 +126,12 @@ header {
 
 .hero {
     position: relative;
-    min-height: 500px;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
+    min-height: 500px;
     overflow: hidden;
 }
 
@@ -163,7 +165,6 @@ header {
 
 .hero-content h1 {
     margin-bottom: 1rem;
-
     font-size: 2.5rem;
 }
 
@@ -201,20 +202,15 @@ header {
 
 
 /* =========================
-   INTRODUCTION
+   HOME INTRODUCTION
 ========================= */
 
 .introduction {
     max-width: 800px;
-
     margin: auto;
     padding: 3rem 1.5rem;
 
     text-align: center;
-}
-
-.introduction h2 {
-    color: #f2efe9;
 }
 
 
@@ -236,18 +232,13 @@ header {
 }
 
 .featured-grid {
-    max-width: 1100px;
-    margin: auto;
-
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
+
+    max-width: 1100px;
+    margin: auto;
 }
-
-
-/* =========================
-   LOCATION CARDS
-========================= */
 
 .location-card {
     overflow: hidden;
@@ -287,28 +278,9 @@ header {
     margin-top: 2rem;
 
     color: #f2efe9;
-
     font-weight: 700;
 }
 
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-    padding: 1.5rem 1rem;
-
-    background-color: #1b1b1e;
-
-    border-top: 3px solid #7a1f2b;
-
-    text-align: center;
-}
-
-footer p {
-    margin: 0.4rem;
-}
 
 /* =========================
    PAGE HEADING
@@ -318,6 +290,7 @@ footer p {
     max-width: 800px;
     margin: auto;
     padding: 3rem 1.5rem 2rem;
+
     text-align: center;
 }
 
@@ -372,12 +345,12 @@ footer p {
 }
 
 .location-grid {
-    max-width: 1200px;
-    margin: auto;
-
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
+
+    max-width: 1200px;
+    margin: auto;
 }
 
 .explore-card {
@@ -411,7 +384,6 @@ footer p {
 
 .location-type {
     margin: 0.25rem 0 1.25rem;
-
     color: #ccc;
 }
 
@@ -421,11 +393,13 @@ footer p {
 }
 
 .details-button,
-.save-button {
+.save-button,
+.remove-button {
     flex: 1;
 
     padding: 0.75rem;
 
+    border: 2px solid #7a1f2b;
     border-radius: 4px;
 
     font-family: "Roboto", sans-serif;
@@ -437,21 +411,22 @@ footer p {
 .details-button {
     background-color: #7a1f2b;
     color: #f2efe9;
-
-    border: 2px solid #7a1f2b;
 }
 
-.save-button {
+.save-button,
+.remove-button {
     background-color: transparent;
     color: #f2efe9;
-
-    border: 2px solid #7a1f2b;
 }
 
 .details-button:hover,
 .save-button:hover {
     background-color: #f2efe9;
     color: #7a1f2b;
+}
+
+.remove-button:hover {
+    background-color: #7a1f2b;
 }
 
 
@@ -462,7 +437,6 @@ footer p {
 #location-dialog {
     width: 90%;
     max-width: 650px;
-
     padding: 0;
 
     background-color: #242427;
@@ -525,20 +499,21 @@ footer p {
     margin-bottom: 2rem;
 }
 
+#dialog-content a:not(.button) {
+    color: #f2efe9;
+}
+
 .dialog-location {
     color: #ccc;
 }
 
-#dialog-content a:not(.button) {
-    color: #f2efe9;
-}
+
 /* =========================
    SAVED PAGE
 ========================= */
 
 .saved-section {
     min-height: 400px;
-
     padding: 1rem 1rem 4rem;
 }
 
@@ -562,7 +537,6 @@ footer p {
 
 .empty-saved h3 {
     margin-top: 0;
-
     font-size: 1.5rem;
 }
 
@@ -571,25 +545,20 @@ footer p {
 }
 
 
-/* REMOVE BUTTON */
+/* =========================
+   FOOTER
+========================= */
 
-.remove-button {
-    flex: 1;
+footer {
+    padding: 1.5rem 1rem;
 
-    padding: 0.75rem;
+    background-color: #1b1b1e;
 
-    background-color: transparent;
-    color: #f2efe9;
+    border-top: 3px solid #7a1f2b;
 
-    border: 2px solid #7a1f2b;
-    border-radius: 4px;
-
-    font-family: "Roboto", sans-serif;
-    font-weight: 700;
-
-    cursor: pointer;
+    text-align: center;
 }
 
-.remove-button:hover {
-    background-color: #7a1f2b;
+footer p {
+    margin: 0.4rem;
 }

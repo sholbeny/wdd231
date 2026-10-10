@@ -1,6 +1,8 @@
 @media screen and (min-width: 768px) {
 
-    /* HEADER */
+    /* =========================
+       HEADER
+    ========================= */
 
     .header-content {
         flex-wrap: nowrap;
@@ -12,7 +14,9 @@
     }
 
 
-    /* NAVIGATION */
+    /* =========================
+       NAVIGATION
+    ========================= */
 
     #menu {
         display: none;
@@ -20,24 +24,25 @@
 
     #navigation {
         display: flex;
-        width: auto;
-
         flex-direction: row;
 
+        width: auto;
         margin-top: 0;
 
         gap: 0.5rem;
     }
 
     #navigation a {
+        padding: 0.75rem 1rem;
+
         border: none;
         border-radius: 4px;
-
-        padding: 0.75rem 1rem;
     }
 
 
-    /* HERO */
+    /* =========================
+       HERO
+    ========================= */
 
     .hero {
         min-height: 600px;
@@ -52,14 +57,18 @@
     }
 
 
-    /* INTRODUCTION */
+    /* =========================
+       INTRODUCTION
+    ========================= */
 
     .introduction {
         padding: 4rem 2rem;
     }
 
 
-    /* FEATURED LOCATIONS */
+    /* =========================
+       FEATURED LOCATIONS
+    ========================= */
 
     .featured {
         padding: 4rem 2rem;
@@ -78,30 +87,32 @@
     .location-card:hover {
         transform: translateY(-5px);
 
-        box-shadow:
-            0 8px 20px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
     }
 
-}
-/* EXPLORE PAGE */
 
-.location-grid {
-    grid-template-columns: repeat(3, 1fr);
-}
+    /* =========================
+       EXPLORE PAGE
+    ========================= */
 
-.explore-card {
-    transition:
-        transform 0.2s,
-        box-shadow 0.2s;
-}
+    .location-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 
-.explore-card:hover {
-    transform: translateY(-5px);
+    .explore-card {
+        transition:
+            transform 0.2s,
+            box-shadow 0.2s;
+    }
 
-    box-shadow:
-        0 8px 20px rgba(0, 0, 0, 0.4);
-}
+    .explore-card:hover {
+        transform: translateY(-5px);
 
-.page-heading h1 {
-    font-size: 3rem;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .page-heading h1 {
+        font-size: 3rem;
+    }
+
 }
