@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Explore Haunted Locations | Haunted America</title>
+
+    <meta name="description"
+        content="Explore reportedly haunted locations across the United States and learn about their history and paranormal stories.">
+    <meta name="author" content="Sammi Holbeny">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <!-- JavaScript -->
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/locations.js" defer></script>
+    <script src="scripts/explore.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-content">
+
+            <a href="index.html" class="branding">
+                <img src="images/logo.webp" alt="Haunted America logo">
+                <span>Haunted America</span>
+            </a>
+
+            <button id="menu" aria-label="Open navigation menu">
+                &#9776;
+            </button>
+
+            <nav id="navigation">
+                <a href="index.html">Home</a>
+                <a href="explore.html" class="active">Explore</a>
+                <a href="saved.html">Saved</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- PAGE INTRO -->
+
+        <section class="page-heading">
+
+            <h1>Explore Haunted Locations</h1>
+
+            <p>
+                Discover reportedly haunted locations throughout the
+                United States. Select a location to learn about its
+                history and reported paranormal activity.
+            </p>
+
+        </section>
+
+
+        <!-- FILTERS -->
+
+        <section class="filters">
+
+            <h2>Filter Locations</h2>
+
+            <div class="filter-buttons">
+
+                <button class="filter active-filter" data-filter="all">
+                    All
+                </button>
+
+                <button class="filter" data-filter="house">
+                    Houses
+                </button>
+
+                <button class="filter" data-filter="hotel">
+                    Hotels
+                </button>
+
+                <button class="filter" data-filter="historic">
+                    Historic Sites
+                </button>
+
+                <button class="filter" data-filter="institution">
+                    Asylums & Prisons
+                </button>
+
+                <button class="filter" data-filter="other">
+                    Other
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- LOCATION CARDS -->
+
+        <section class="explore-section">
+
+            <h2>Haunted Locations</h2>
+
+            <div id="location-cards" class="location-grid">
+                <!-- JavaScript creates the cards here -->
+            </div>
+
+        </section>
+
+
+        <!-- DETAILS DIALOG -->
+
+        <dialog id="location-dialog">
+
+            <button id="close-dialog"
+                aria-label="Close location details">
+                &#10005;
+            </button>
+
+            <div id="dialog-content">
+                <!-- JavaScript adds location details here -->
+            </div>
+
+        </dialog>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            &copy; <span id="currentyear"></span>
+            Haunted America | Sammi Holbeny | WDD 231
+        </p>
+
+        <p id="lastModified"></p>
+
+    </footer>
+
+</body>
+
+</html>
