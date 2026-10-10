@@ -1,0 +1,85 @@
+@media screen and (min-width: 768px) {
+
+    /* HEADER */
+
+    .header-content {
+        flex-wrap: nowrap;
+    }
+
+    .branding img {
+        width: 75px;
+        height: 75px;
+    }
+
+
+    /* NAVIGATION */
+
+    #menu {
+        display: none;
+    }
+
+    #navigation {
+        display: flex;
+        width: auto;
+
+        flex-direction: row;
+
+        margin-top: 0;
+
+        gap: 0.5rem;
+    }
+
+    #navigation a {
+        border: none;
+        border-radius: 4px;
+
+        padding: 0.75rem 1rem;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: 600px;
+    }
+
+    .hero-content h1 {
+        font-size: 4rem;
+    }
+
+    .hero-content p {
+        font-size: 1.25rem;
+    }
+
+
+    /* INTRODUCTION */
+
+    .introduction {
+        padding: 4rem 2rem;
+    }
+
+
+    /* FEATURED LOCATIONS */
+
+    .featured {
+        padding: 4rem 2rem;
+    }
+
+    .featured-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .location-card {
+        transition:
+            transform 0.2s,
+            box-shadow 0.2s;
+    }
+
+    .location-card:hover {
+        transform: translateY(-5px);
+
+        box-shadow:
+            0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+}
