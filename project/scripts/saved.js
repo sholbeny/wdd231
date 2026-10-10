@@ -1,19 +1,39 @@
+import { getLocations } from "./locations.js";
+
 const savedContainer = document.querySelector("#saved-locations");
 const emptySaved = document.querySelector("#empty-saved");
-
 const dialog = document.querySelector("#location-dialog");
 const dialogContent = document.querySelector("#dialog-content");
 const closeDialog = document.querySelector("#close-dialog");
 
+let hauntedLocations = [];
 
-function getSavedLocations() {
+
+async function loadSavedLocations() {
+    hauntedLocations = await getLocations();
+
+    if (hauntedLocations.length === 0) {
+        savedContainer.innerHTML = `
+            <p class="error-message">
+                Sorry, the haunted locations could not be loaded.
+            </p>
+        `;
+
+        emptySaved.style.display = "none";
+        return;
+    }
+
+    displaySavedLocations();
+}
+
+
+function getSavedIds() {
     return JSON.parse(localStorage.getItem("savedLocations")) || [];
 }
 
 
 function displaySavedLocations() {
-
-    const savedIds = getSavedLocations();
+    const savedIds = getSavedIds();
 
     const savedLocations = hauntedLocations.filter((location) =>
         savedIds.includes(location.id)
@@ -21,31 +41,21 @@ function displaySavedLocations() {
 
     savedContainer.innerHTML = "";
 
-
-    // Show empty message if nothing is saved
-
     if (savedLocations.length === 0) {
-
         emptySaved.style.display = "block";
         savedContainer.style.display = "none";
-
         return;
     }
-
 
     emptySaved.style.display = "none";
     savedContainer.style.display = "grid";
 
-
     savedLocations.forEach((location) => {
-
         const card = document.createElement("article");
 
         card.classList.add("explore-card");
 
-
         card.innerHTML = `
-
             <img
                 src="${location.image}"
                 alt="${location.name}"
@@ -81,98 +91,65 @@ function displaySavedLocations() {
                 </div>
 
             </div>
-
         `;
 
-
         savedContainer.appendChild(card);
-
     });
 
-
     addSavedEvents();
-
 }
 
 
 function addSavedEvents() {
-
-    const detailsButtons =
-        document.querySelectorAll(".details-button");
-
-    const removeButtons =
-        document.querySelectorAll(".remove-button");
-
+    const detailsButtons = document.querySelectorAll(".details-button");
+    const removeButtons = document.querySelectorAll(".remove-button");
 
     detailsButtons.forEach((button) => {
-
         button.addEventListener("click", () => {
-
             const location = hauntedLocations.find(
                 (place) => place.id === button.dataset.id
             );
 
             showLocationDetails(location);
-
         });
-
     });
-
 
     removeButtons.forEach((button) => {
-
         button.addEventListener("click", () => {
-
             removeLocation(button.dataset.id);
-
         });
-
     });
-
 }
 
 
 function removeLocation(id) {
+    let savedIds = getSavedIds();
 
-    let savedIds = getSavedLocations();
-
-
-    savedIds = savedIds.filter(
-        (savedId) => savedId !== id
-    );
-
+    savedIds = savedIds.filter((savedId) => savedId !== id);
 
     localStorage.setItem(
         "savedLocations",
         JSON.stringify(savedIds)
     );
 
-
     displaySavedLocations();
-
 }
 
 
 function showLocationDetails(location) {
-
     let contact = "";
 
-
     if (location.phone) {
-
-        contact = `
+        contact += `
             <p>
                 <strong>Phone:</strong>
                 ${location.phone}
             </p>
         `;
-
     }
 
-
     if (location.email) {
-
-        contact = `
+        contact += `
             <p>
                 <strong>Email:</strong>
                 <a href="mailto:${location.email}">
@@ -180,12 +157,9 @@ function showLocationDetails(location) {
                 </a>
             </p>
         `;
-
     }
 
-
     dialogContent.innerHTML = `
-
         <img
             src="${location.image}"
             alt="${location.name}"
@@ -202,20 +176,17 @@ function showLocationDetails(location) {
             ${location.typeName}
         </p>
 
-
         <h3>History</h3>
 
         <p>
             ${location.history}
         </p>
 
-
         <h3>Reported Paranormal Activity</h3>
 
         <p>
             ${location.paranormal}
         </p>
-
 
         <h3>Visitor Information</h3>
 
@@ -226,7 +197,6 @@ function showLocationDetails(location) {
 
         ${contact}
 
-
         <a
             href="${location.website}"
             target="_blank"
@@ -234,20 +204,15 @@ function showLocationDetails(location) {
             class="button">
             Visit Official Website
         </a>
-
     `;
 
-
     dialog.showModal();
-
 }
 
 
 closeDialog.addEventListener("click", () => {
-
     dialog.close();
-
 });
 
 
-displaySavedLocations();
+loadSavedLocations();
